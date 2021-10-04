@@ -24,5 +24,5 @@
 
      - name: Copy the Artifact to Webapps in tomcat
        ansible.builtin.copy:
-         src: /target/web_demo.war
+         src: ./target/web_demo.war
          dest: /opt/apache-tomcat-9.0.53/webapps/
