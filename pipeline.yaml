@@ -10,19 +10,19 @@
 
      - name: Download the Apache tar file
        get_url:
-         url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.53/bin/apache-tomcat-9.0.53.tar.gz
+         url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.12/bin/apache-tomcat-10.0.12.tar.gz
          dest: /home/
 
      - name: Untar the Tar file
        unarchive:
-         src: /home/apache-tomcat-9.0.53.tar.gz
+         src: /home/apache-tomcat-10.0.12.tar.gz
          dest: /opt/
          remote_src: yes
 
      - name: Start the Tomcat
-       shell: nohup /opt/apache-tomcat-9.0.53/bin/startup.sh
+       shell: nohup /opt/apache-tomcat-10.0.12/bin/startup.sh
 
      - name: Copy the Artifact to Webapps in tomcat
        ansible.builtin.copy:
          src: ./target/web_demo.war
-         dest: /opt/apache-tomcat-9.0.53/webapps/
+         dest: /opt/apache-tomcat-10.0.12/webapps/
